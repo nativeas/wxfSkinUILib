@@ -14,10 +14,12 @@ package org.oswxf.skinui.model
 	 */
 	public class SimpleResObjectDefineModel
 	{
+		
 		/**
 		 * 存储所有res定义 
 		 */		
 		private var _resStorage:Dictionary = new Dictionary();
+		
 		/**
 		 * 存入RESOBj 
 		 * @param $res
@@ -33,9 +35,9 @@ package org.oswxf.skinui.model
 			}
 			
 			var distRes:SimpleResObject = _resStorage[$res.uid];
-			if(compareRes($res,distRes))
+			if(compareRes($res,distRes)){
 				return;
-			else
+			}else
 			{
 				//do update
 				_resStorage[$res.uid] = $res;
@@ -66,8 +68,9 @@ package org.oswxf.skinui.model
 		 */
 		public function delResObj($resUID:String):Boolean
 		{
-			if(_resStorage[$resUID]==null)
-				return false
+			if(_resStorage[$resUID]==null){
+				return false;
+			}
 			_resStorage[$resUID] = null;
 			delete _resStorage[$resUID];
 			return true;
@@ -84,6 +87,11 @@ package org.oswxf.skinui.model
 			return _resStorage[$resUID] as SimpleResObject;
 		}
 		
+		/**
+		 * get stored res' URI list 
+		 * @return 
+		 * 
+		 */
 		public function getBunderURIList():Vector.<String>
 		{
 			var result:Vector.<String> = new Vector.<String>;
@@ -99,6 +107,11 @@ package org.oswxf.skinui.model
 		}
 		
 		
+		/**
+		 * get stored res' SimpleResObject list 
+		 * @return 
+		 * 
+		 */
 		public function getResList():Vector.<SimpleResObject>
 		{
 			var result:Vector.<SimpleResObject> = new Vector.<SimpleResObject>;
@@ -108,6 +121,7 @@ package org.oswxf.skinui.model
 			}
 			return result;
 		}
+		
 		
 		public function getResListByURI($uri:String):Vector.<SimpleResObject>
 		{
@@ -131,9 +145,8 @@ package org.oswxf.skinui.model
 		 */
 		public function get serialize():String
 		{
-			
 			var sit:Vector.<SimpleResObject> = getResList();
-			var output:String =JSONParser.encode(sit);// JSON.stringify(sit);
+			var output:String =JSONParser.encode(sit);
 			return output;
 		}
 		
@@ -145,8 +158,6 @@ package org.oswxf.skinui.model
 		 */
 		public function set serialize($value:String ):void
 		{
-			//throw new Error('need to complete')
-			
 			var tmp:Object = JSONParser.decode($value);//JSON.parse($value);
 			for each(var item:Object in tmp)
 			{
@@ -157,9 +168,6 @@ package org.oswxf.skinui.model
 				}
 				setResObj(sip)
 			}
-			
 		}
-		
-		
 	}
 }
