@@ -1,5 +1,10 @@
 package org.oswxf.skinui.model
 {
+	/**
+	 * 
+	 * @author nativeas
+	 * 
+	 */
 	public class SkinUIModelLocator
 	{
 		static public var bundlerModel:BundlerModel = new BundlerModel();
