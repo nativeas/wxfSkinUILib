@@ -32,18 +32,22 @@ package org.oswxf.skinui.model
 		
 		
 		/**
-		 * 制定URI的资源包是否可用
+		 * 指定URI的资源包是否可用
 		 * 可能这个包正在Loading之类的情况，也是不可用的 
 		 * @param $uri
 		 * @return 
-		 * 
+		 * @TODO: this function need to Complete
 		 */
 		public function isBundlerAvaiable($uri:String):Boolean
 		{
 			return false;
 		}
 		
+		/**
+		 * bundler storeage 
+		 */
 		private var _bundlerStorage:Dictionary = new Dictionary();
+		
 		/**
 		 * 置入某个URI的资源包二进制 
 		 * @param $uri
@@ -81,13 +85,18 @@ package org.oswxf.skinui.model
 			for (var key:String  in _bundlerStorage)
 			{
 				var res:ResBundlerObject = new ResBundlerObject();
-				//res.binary = _bundlerStorage[key];
 				res.uri = key;
 				result.push(res);
 			}
 			return result;	
 		}
 		
+		/**
+		 *  
+		 * @param $uri
+		 * @return 
+		 * 
+		 */
 		public function isBundlerDataExist($uri:String):Boolean
 		{
 			return $uri in _bundlerStorage;
