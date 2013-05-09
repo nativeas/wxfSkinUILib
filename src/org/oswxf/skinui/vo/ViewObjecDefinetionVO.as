@@ -12,11 +12,17 @@ package org.oswxf.skinui.vo
 	public class ViewObjecDefinetionVO
 	{
 	
+		/**
+		 * constructor 
+		 * 
+		 */
 		public function ViewObjecDefinetionVO():void
 		{
 			className = 'org.oswxf.skinui.vo.ViewObjecDefinetionVO'
 		}
+		
 		public var className:String = '';
+		
 		/**
 		 * 描述
 		 * 确保知道这个实例是做什么用的
@@ -34,13 +40,11 @@ package org.oswxf.skinui.vo
 		 */
 		public var name:String = "";
 		
-	
 		/**
 		 * 动态属性
 		 * 类似x,y,height,weight 
 		 */
 		public var dynamic_props:Dictionary = new Dictionary;
-		
 		
 		/**
 		 * 层级 
@@ -57,6 +61,5 @@ package org.oswxf.skinui.vo
 		 * 如果是，就不会被实例化 
 		 */
 		public var isRefObject:Boolean = false; 
-		
 	}
 }
