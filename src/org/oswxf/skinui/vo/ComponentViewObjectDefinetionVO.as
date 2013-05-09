@@ -2,8 +2,17 @@ package org.oswxf.skinui.vo
 {
 	import flash.utils.Dictionary;
 
+	/**
+	 * Custom Definion Componnet  
+	 * @author nativeas
+	 * 
+	 */
 	public class ComponentViewObjectDefinetionVO extends ViewObjecDefinetionVO
 	{
+		/**
+		 * Constructor 
+		 * 
+		 */		
 		public function ComponentViewObjectDefinetionVO()
 		{
 			className = 'org.oswxf.skinui.vo.ComponentViewObjectDefinetionVO'
@@ -20,6 +29,9 @@ package org.oswxf.skinui.vo
 		 */
 		public var skinList:Dictionary = new Dictionary();
 		
+		/**
+		 * 
+		 */
 		public var compProps:Dictionary = new Dictionary();
 		
 		/**
@@ -32,6 +44,7 @@ package org.oswxf.skinui.vo
 		 * useStyle 
 		 */		
 		public var useStyle:Boolean = false
+		
 		/**
 		 * style name for component by style sheet 
 		 */
